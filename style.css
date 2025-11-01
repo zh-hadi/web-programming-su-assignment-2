@@ -1,0 +1,26 @@
+/*
+------------------------------------------------------------
+Project Name : SU Web Programming Assignment 2
+Author       : Hadiuzzaman
+Student ID   : CSE2301028162
+Description  : This project demonstrates the use of HTML and CSS 
+               to design a responsive webpage layout as part of 
+               the SU Web Programming course assignment.
+Start Date   : 1st November 2025
+Submit Date  : 7th Nomvember 2025
+------------------------------------------------------------
+*/
+
+:root {
+    --blue: #007bff;
+    --primay: #ffffff;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
