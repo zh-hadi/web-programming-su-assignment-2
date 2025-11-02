@@ -23,4 +23,80 @@ Submit Date  : 7th Nomvember 2025
     padding: 0;
 }
 
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
 
+.btn-primary {
+    background-color: var(--blue);
+    color: var(--primay);
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    opacity: .8;
+}
+
+.heading-1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-column {
+    flex-direction: column;
+}
+
+.justifiy-between {
+    justify-content: space-between;
+}
+
+.aligin-items {
+    align-items: center;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.my-30px {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.section-1 {
+    width: 50%;
+    margin: 0px auto;
+    gap: 15px;
+}
+
+.section-1 > h1 {
+    font-size: 55px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px #b17575;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+.section-1 > p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: gray
+}
+
+.mb-10px {
+    margin-bottom: 10px;
+}
+.mb-15px {
+    margin-bottom: 15px;
+}
+
+.align-center {
+    text-align: center;
+}
