@@ -85,9 +85,13 @@ Submit Date  : 7th Nomvember 2025
   }
 
 .section-1 > p {
-    margin-bottom: 20px;
     font-size: 18px;
-    color: gray
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.py-50px {
+    padding: 50px 0px;
 }
 
 .mb-10px {
@@ -99,4 +103,17 @@ Submit Date  : 7th Nomvember 2025
 
 .align-center {
     text-align: center;
+}
+
+.image-section {
+
+}
+
+.image-section div {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.image-section img {
+    width: 100%;
 }
