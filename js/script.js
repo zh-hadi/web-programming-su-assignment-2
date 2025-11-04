@@ -1,7 +1,10 @@
 function handelSearch() {
     const searchText = document.getElementById('search_input_text').value;
-
-    loadData(searchText);
+    
+    toggleLoaderAnimation(true);
+    setTimeout(()=> {
+        loadData(searchText);
+    }, 1000);
 }
 
 const loadData =async (search) => {
@@ -15,9 +18,9 @@ const loadData =async (search) => {
 
 const renderData = (data, search) => {
     const productContainer = document.getElementById('product_container');
-    productContainer.innerHTML = "<div>loading</div>";
+    productContainer.innerHTML = "";
+    document.getElementById('not-found-message')?.remove();
 
-    console.log(data)
     let content = "";
     data.forEach(item => {
         content += `<div class="card">
@@ -40,15 +43,15 @@ const renderData = (data, search) => {
                 </div>`
     });
 
+    toggleLoaderAnimation(false);
     
     if(data.length > 0){
-        document.getElementById('not-found-message')?.remove();
         productContainer.innerHTML = content;
     }else {
         productContainer.insertAdjacentHTML("beforebegin", `<div id="not-found-message" class="not-found">No Phones found for "${search}"</div>`);
     }
 }
 
-const loadingAdd = () => {
-    
+const toggleLoaderAnimation = (loading) => {
+    document.getElementById('loader-section').style.opacity = loading ? 1 : 0;
 }
