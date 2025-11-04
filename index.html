@@ -53,17 +53,17 @@
             <div class="search-container">
                 <div class="search-input">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search Your Phone">
+                    <input id="search_input_text"  type="text" placeholder="Search Your Phone">
                 </div>
                 <div class="search-button">
-                    <button class="btn-primary">Search</button>
+                    <button onclick="handelSearch()" class="btn-primary">Search</button>
                 </div>
             </div>
           </section>
 
+          <!-- <div class="not-found">No Phones found for "hadi"</div> -->
           <!-- product section  -->
-           <section class="product-section container py-50px">
-
+           <section id="product_container" class="product-section container py-50px">
                 <!-- card 1 -->
                 <div class="card">
                     <div class="card-image">
@@ -203,5 +203,7 @@
              </div>
         </div>
     </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>

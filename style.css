@@ -238,13 +238,16 @@ footer .footer-container {
     /* background-color: red; */
     background-color: var(--white);
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card-image:hover {
     background-color: #284e8615;
     transition: 0.8s;
   }
 .card-image img {
-    width: 100%;
+    width: 80%;
     height: 300px;
 }
 .cart-title {
@@ -268,4 +271,16 @@ footer .footer-container {
 }
 .cart-btn {
     text-align: center;
+}
+
+.not-found {
+    border: 1px solid gray;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    color: #110a0a;
 }
