@@ -313,6 +313,61 @@ footer .footer-container {
     display: none;
 }
 
+.modal-img{
+    height: 250px;
+    width: 80%;
+    background-color: rgba(244, 167, 167, 0.632);
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.modal-img img{
+    /* width: 100%; */
+    margin: 0 auto;
+}
+
+
+.phone-details{
+
+}
+.phone-details h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.phone-details p {
+    color: gray;
+}
+
+#modal-content {
+    overflow-y: auto;
+    height: 520px;
+    scrollbar-width: none;
+    padding: 20px
+}
+
+.phone-features-list {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+.phone-features-list p {
+    color: #4d4040;
+}
+.phone-features-list p > span {
+    font-weight: bold;
+    padding-right: 10px;
+    text-transform: capitalize;
+    color: #000;
+}
+.phone-features-list > .others {
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+
 #overlay {
     position: fixed;
     top: 0;

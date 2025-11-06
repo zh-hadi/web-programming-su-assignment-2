@@ -84,13 +84,46 @@ const loadPhoneDetails =async (slug) => {
     const res = await fetch(api);
     const data = await res.json();
 
+    const phone = data.data;
+
     const modalContent = document.getElementById('modal-content');
     modalContent.innerHTML = "";
 
+    let features_data = '';
+
+    const mainFeatures = phone.mainFeatures;
+
+    for (const [key, value] of Object.entries(mainFeatures)) {
+        if (Array.isArray(value)) {
+            console.log(`${key}: ${value.join(', ')}`);
+            features_data += `<p><span>${key}:</span>${value.join(', ')}</p>`;
+        } else {
+            console.log(`${key}: ${value}`);
+            features_data += `<p><span>${key}:</span>${value}</p>`;
+        }
+    }
+
+    features_data += `<div class="others">Others</div>`;
+
+    for (const [key, value] of Object.entries(phone.others)) {
+        if (Array.isArray(value)) {
+            console.log(`${key}: ${value.join(', ')}`);
+            features_data += `<p><span>${key}:</span>${value.join(', ')}</p>`;
+        } else {
+            console.log(`${key}: ${value}`);
+            features_data += `<p><span>${key}:</span>${value}</p>`;
+        }
+    }
+
     modalContent.innerHTML = `<div class="modal-img">
-                <img src="${data.data.image}" alt="iphone">
+                <img src="${phone.image}" alt="${phone.name}">
             </div>
-            <div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam error dolorum unde rem non iusto explicabo corporis repellat odit blanditiis deleniti hic illo, incidunt tempora quas earum? Eaque, cupiditate soluta.</p>
+            <div class="phone-details">
+                <h2>${phone.name}</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos doloremque vitae iusto aperiam </p>
+                <div class="phone-features-list">
+                    ${features_data}
+                    
+                </div>
             </div>`;
 }
