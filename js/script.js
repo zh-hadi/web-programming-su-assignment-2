@@ -38,7 +38,7 @@ const renderData = (data, search) => {
                     </div>
                     
                     <div class="cart-btn">
-                        <button class="btn-primary pointer">Show Details</button>
+                        <button onClick="modalOpen('${item.slug}')" class="btn-primary pointer">Show Details</button>
                     </div>
                 </div>`
     });
@@ -54,4 +54,43 @@ const renderData = (data, search) => {
 
 const toggleLoaderAnimation = (loading) => {
     document.getElementById('loader-section').style.opacity = loading ? 1 : 0;
+}
+
+
+// modal open
+const modalOpen = (slug) => {
+    const modal = document.getElementById('product-modal');
+    const overlay = document.getElementById('overlay');
+
+    console.log(slug);
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+
+    loadPhoneDetails(slug);
+}
+
+// modal close
+const modalClose = () => {
+    const modal = document.getElementById('product-modal');
+    const overlay = document.getElementById('overlay');
+
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+}
+
+const loadPhoneDetails =async (slug) => {
+    const api = `https://openapi.programming-hero.com/api/phone/${slug}`;
+
+    const res = await fetch(api);
+    const data = await res.json();
+
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = "";
+
+    modalContent.innerHTML = `<div class="modal-img">
+                <img src="${data.data.image}" alt="iphone">
+            </div>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam error dolorum unde rem non iusto explicabo corporis repellat odit blanditiis deleniti hic illo, incidunt tempora quas earum? Eaque, cupiditate soluta.</p>
+            </div>`;
 }
